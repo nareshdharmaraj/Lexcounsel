@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JusticeHub - Future Legal Tech</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Theme 2 Overrides (Tech/Cyber) */
+        :root {
+            --primary-1: var(--primary-2);
+            /* Teal */
+            --bg-1: var(--bg-2);
+            /* Deep Dark */
+            --secondary-1: var(--accent-2);
+            /* Rose Accent */
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            /* Tech Font */
+            /* Cyan Mesh Gradient Override */
+            --mesh-color-1: hsla(170, 60%, 50%, 0.1);
+            --mesh-color-2: hsla(250, 60%, 50%, 0.1);
+        }
+
+        /* Tech Specific Styles */
+        .display-text {
+            font-weight: 700;
+            /* Bolder */
+            letter-spacing: -0.04em;
+        }
+
+        .gold-text {
+            color: var(--primary-1);
+            /* Teal */
+            font-style: normal;
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .grid-item {
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(45, 212, 191, 0.2);
+        }
+
+        .grid-item:hover {
+            border-color: var(--primary-1);
+            box-shadow: 0 0 30px rgba(45, 212, 191, 0.1);
+        }
+
+        .mesh-bg {
+            background: radial-gradient(at 0% 0%, var(--bg-1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(175, 80%, 40%, 0.15) 0, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(330, 80%, 60%, 0.15) 0, transparent 50%);
+        }
+
+        .btn-magnetic {
+            border-radius: 4px;
+            border-color: var(--primary-1);
+            color: var(--primary-1);
+        }
+
+        .btn-magnetic::before {
+            background: var(--primary-1);
+        }
+
+        .btn-magnetic:hover {
+            color: #000;
+        }
+
+        /* Tech Decoration */
+        .tech-line {
+            position: absolute;
+            background: var(--primary-1);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar" style="border-radius: 12px; background: rgba(0,0,0,0.8);">
+        <a href="#" class="nav-logo">justice<span style="color:var(--primary-1)">Hub</span>_</a>
+
+        <div class="nav-links">
+            <a href="#" class="nav-btn">Platform</a>
+            <a href="#" class="nav-btn">Solutions</a>
+            <a href="#" class="nav-btn">Pricing</a>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button id="themeToggle" class="nav-btn" style="background:none; border:none;">// THEME</button>
+            <a href="login.html" class="btn-magnetic">Client Access_</a>
+        </div>
+    </nav>
+
+    <!-- Cinematic Tech Hero -->
+    <section class="hero-cinematic" style="padding-top: 8rem;">
+        <div class="mesh-bg"></div>
+
+        <!-- Tech Grid Overlay -->
+        <div
+            style="position: absolute; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none;">
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-subtitle" style="font-family: monospace;">SYSTEM.STATUS: ONLINE</p>
+            <h1 class="display-text">
+                The Future of <br>
+                <span class="gold-text">Legal Intelligence.</span>
+            </h1>
+            <p
+                style="color: var(--text-muted); max-width: 600px; margin: 2rem auto; font-size: 1.1rem; font-family: 'Inter', sans-serif;">
+                AI-driven litigation analysis and automated compliance for the modern enterprise.
+                Predict outcome. Minimize risk.
+            </p>
+
+            <div style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: center;">
+                <a href="#" class="btn-magnetic">Initialize Demo</a>
+                <a href="#" class="btn-magnetic"
+                    style="border-color: var(--text-muted); color: var(--text-muted);">Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stats Ribbon -->
+    <div class="stats-ribbon" style="background: transparent; border-color: rgba(255,255,255,0.1);">
+        <div class="stats-container">
+            <div class="stat-premium">
+                <span class="stat-num" data-target="98">0</span>
+                <span class="stat-label">Accuracy Rate (%)</span>
+            </div>
+            <div class="stat-premium">
+                <span class="stat-num" data-target="5000">0</span>
+                <span class="stat-label">Data Points Processed</span>
+            </div>
+            <div class="stat-premium">
+                <span class="stat-num" data-target="24">0</span>
+                <span class="stat-label">Hr Turnaround</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bento Grid Services -->
+    <section class="section-premium">
+        <h2 class="display-text" style="font-size: 3rem; text-align: left; margin-bottom: 4rem;">
+            Core <span class="gold-text">Modules.</span>
+        </h2>
+
+        <div class="grid-asymmetric">
+            <!-- Predictive (Tall) -->
+            <div class="grid-item" style="grid-row: span 2;">
+                <div class="grid-icon">🧠</div>
+                <h3 class="grid-title">Predictive Analytics</h3>
+                <p class="grid-desc">Using ML models to forecast case outcomes based on 20 years of precedent data.</p>
+            </div>
+
+            <!-- Automation (Wide) -->
+            <div class="grid-item" style="grid-column: span 8;">
+                <div class="grid-icon">⚡</div>
+                <h3 class="grid-title">Contract Automation</h3>
+                <p class="grid-desc">Draft complex agreements in minutes, not hours. Smart variable replacement.</p>
+            </div>
+
+            <!-- Security (Standard) -->
+            <div class="grid-item" style="grid-column: span 4;">
+                <div class="grid-icon">🔒</div>
+                <h3 class="grid-title">Military-Grade Security</h3>
+                <p class="grid-desc">End-to-end encryption for all sensitive client data.</p>
+            </div>
+
+            <!-- Compliance (Standard) -->
+            <div class="grid-item" style="grid-column: span 4;">
+                <div class="grid-icon">🌐</div>
+                <h3 class="grid-title">Global Compliance</h3>
+                <p class="grid-desc">Real-time regulatory updates across 50+ jurisdictions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Technology Stack -->
+    <section class="section-premium" style="background: rgba(45, 212, 191, 0.05);">
+        <h2 class="display-text" style="font-size: 3rem; text-align: center; margin-bottom: 4rem;">
+            Powered By <span class="gold-text">Next-Gen Tech.</span>
+        </h2>
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                <div class="grid-item" style="padding: 2rem;">
+                    <h3 style="color: var(--primary-1); font-family: monospace; margin-bottom: 0.5rem;">TENSORFLOW</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Deep Learning Core</p>
+                </div>
+                <div class="grid-item" style="padding: 2rem;">
+                    <h3 style="color: var(--primary-1); font-family: monospace; margin-bottom: 0.5rem;">BLOCKCHAIN</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Immutable Records</p>
+                </div>
+                <div class="grid-item" style="padding: 2rem;">
+                    <h3 style="color: var(--primary-1); font-family: monospace; margin-bottom: 0.5rem;">GQL + REDIS</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Real-Time Data</p>
+                </div>
+                <div class="grid-item" style="padding: 2rem;">
+                    <h3 style="color: var(--primary-1); font-family: monospace; margin-bottom: 0.5rem;">KUBERNETES</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Scalable Infrastructure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- New Section: System Architecture -->
+    <section class="section-premium">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <h2 class="display-text" style="font-size: 2.5rem; margin-bottom: 2rem;">Distributed <br><span
+                            class="gold-text">Ledger Security.</span></h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                        Our platform leverages a private, permissioned blockchain to ensure an immutable audit trail for
+                        every legal document and transaction.
+                        Coupled with zero-knowledge proof authentication, your data remains strictly yours.
+                    </p>
+                    <ul style="list-style: none; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: var(--primary-1); font-family: monospace;">></span>
+                            <span style="color: var(--text-main);">AES-256 Quantum-Resistant Encryption</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: var(--primary-1); font-family: monospace;">></span>
+                            <span style="color: var(--text-main);">ISO 27001 Certified Data Centers</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: var(--primary-1); font-family: monospace;">></span>
+                            <span style="color: var(--text-main);">Real-time Smart Contract Auditing</span>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    style="background: rgba(0,0,0,0.5); border: 1px solid var(--primary-1); border-radius: 8px; padding: 2rem; font-family: monospace; color: var(--primary-1); font-size: 0.9rem; overflow: hidden; position: relative;">
+                    <div
+                        style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(0deg, rgba(0,0,0,0.9), transparent 20%); pointer-events: none;">
+                    </div>
+                    <div style="opacity: 0.8;">
+                        <p># System Integrity Check</p>
+                        <p>> Initializing secure handshake...</p>
+                        <p style="color: lime;">> Connection Established [TLS 1.3]</p>
+                        <br>
+                        <p>> Verifying Node Signatures...</p>
+                        <p>> Node A: <span style="color: #fff;">Verified</span></p>
+                        <p>> Node B: <span style="color: #fff;">Verified</span></p>
+                        <p>> Node C: <span style="color: #fff;">Verified</span></p>
+                        <br>
+                        <p>> Encrypting payload...</p>
+                        <p style="color: lime;">> DATA SECURED.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium" style="background: #050505;">
+        <span class="footer-logo-large" style="font-family: 'Space Grotesk', sans-serif;">JUSTICEHUB</span>
+
+        <div
+            style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-family: monospace;">
+            <span>System Version 2.4.1 // All Systems Operational</span>
+            <div style="display: flex; gap: 1rem;">
+                <a href="#" style="color: var(--text-muted); text-decoration: none; opacity: 0.7;"
+                    aria-label="LinkedIn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none; opacity: 0.7;" aria-label="Twitter">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none; opacity: 0.7;"
+                    aria-label="Instagram">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

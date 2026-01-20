@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Comprehensive legal services across multiple practice areas. Expert representation for your legal needs.">
+    <title>Our Services - LexCounsel Legal Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="nav-component.css">
+    <link rel="stylesheet" href="rtl.css">
+</head>
+
+<body class="light-theme">
+    <div class="ambient-bg">
+        <div class="ambient-grid"></div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo">LexCounsel<span class="gold-text">.</span></a>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" aria-label="Menu">☰</button>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-header">Home <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <div class="mobile-dropdown-content">
+                    <a href="index.html" class="mobile-sub-link">Home 1</a>
+                    <a href="home-2.html" class="mobile-sub-link">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+            <a href="services.html" class="mobile-nav-link">Practice Areas</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-header">Dashboards <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <div class="mobile-dropdown-content">
+                    <a href="dashboard-user.html" class="mobile-sub-link">User Dashboard</a>
+                    <a href="dashboard-admin.html" class="mobile-sub-link">Admin Dashboard</a>
+                </div>
+            </div>
+            <a href="login.html" class="mobile-nav-link">Sign In</a>
+        </div>
+
+        <!-- Center Links -->
+        <div class="nav-center">
+            <div class="nav-item">
+                <button class="nav-link">
+                    HOME
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Home 1</a>
+                    <a href="#" class="dropdown-item">Home 2</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">ABOUT US</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">SERVICES</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </div>
+
+            <div class="nav-item">
+                <button class="nav-link">
+                    DASHBOARDS
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="dashboard-user.html" class="dropdown-item">User Dashboard</a>
+                    <a href="dashboard-admin.html" class="dropdown-item">Admin Dashboard</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Right Icons -->
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">LOGIN</a>
+            <button class="nav-icon-btn" id="rtlToggle" aria-label="Language">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
+            </button>
+            <button class="nav-icon-btn" id="themeToggle" aria-label="Toggle Theme">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero (Adapted) -->
+    <section class="page-hero">
+        <div class="hero-bg-animated">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        <div class="hero-glass-overlay"></div>
+        <div class="container hero-container">
+            <div class="page-hero-content">
+                <h1 class="display-text" style="font-size: 5rem;">Our <span class="gold-text">Expertise.</span></h1>
+                <p class="section-desc"
+                    style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1.5rem; max-width: 600px;">
+                    At LexCounsel, we provide sophisticated, partner-led legal solutions designed to navigate the
+                    complexities of modern global commerce. Our multidisciplinary approach integrates high-stakes
+                    litigation, strategic corporate advisory, and bespoke private wealth management. We don't just solve
+                    legal problems; we safeguard your legacy and accelerate your business interests through precision
+                    analytics and unyielding advocacy.
+                </p>
+            </div>
+            <div class="hero-visual">
+                <div class="professional-plate">
+                    <img src="assets/professional_hero.png" alt="Legal Excellence" class="plate-image">
+                    <div class="plate-overlay"></div>
+                    <div class="trust-seal">
+                        <i class="fas fa-balance-scale"></i>
+                        <div>
+                            <span class="trust-label">Success Rate</span>
+                            <span class="trust-value">98%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector Focus (New Section) -->
+    <section class="section-premium">
+        <div class="container">
+            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Sector <span
+                    class="gold-text">Focus.</span></h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.4rem;">Financial Services</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Advising banks, asset managers, and
+                        fintechs on regulatory compliance and M&A.</p>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.4rem;">Healthcare & Life Sciences</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Helping innovators navigate complex patent
+                        landscapes and FDA regulations.</p>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.4rem;">Real Estate & Construction</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Structuring high-value development deals
+                        and resolving zoning disputes.</p>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.4rem;">Technology & Media</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Protecting digital assets and negotiating
+                        licensing agreements for global platforms.</p>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.4rem;">Energy & Infrastructure</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Counseling on sustainable energy projects
+                        and cross-border infrastructure deals.</p>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.4rem;">Retail & Consumer</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Handling employment matters, supply chain
+                        contracts, and brand protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories (New Section) -->
+    <section class="section-premium" style="background: var(--bg-1);">
+        <div class="container">
+            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Client <span
+                    class="gold-text">Success.</span></h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="glass-card" style="padding: 3rem; text-align: left;" data-parallax="0.05">
+                    <div style="font-size: 4rem; color: var(--primary-1); line-height: 1; margin-bottom: 2rem;">"</div>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-main); margin-bottom: 2rem;">
+                        LexCounsel's strategic vision was instrumental in navigating our cross-border acquisition. Their
+                        team didn't just provide legal answers; they provided business solutions.
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="assets/leader-julian.png" alt="James Sterling"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h4 style="margin: 0;">James Sterling</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">CEO, Sterling Dynamics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; gap: 2rem;">
+                    <div class="glass-card" style="padding: 2rem;" data-parallax="0.1">
+                        <h3 style="color: var(--primary-1); font-size: 2.5rem; margin-bottom: 0.5rem;">$4.2B</h3>
+                        <p style="color: var(--text-muted);">Merger Value Secured</p>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem; transform: translateX(20px);" data-parallax="0.2">
+                        <h3 style="color: var(--primary-1); font-size: 2.5rem; margin-bottom: 0.5rem;">100%</h3>
+                        <p style="color: var(--text-muted);">Litigation Success Rate (2024)</p>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem;" data-parallax="0.1">
+                        <h3 style="color: var(--primary-1); font-size: 2.5rem; margin-bottom: 0.5rem;">30+</h3>
+                        <p style="color: var(--text-muted);">Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section-premium">
+        <div class="container">
+            <!-- Corporate Law -->
+            <div class="glass-card" style="margin-bottom: 4rem; border-left: 4px solid var(--primary-1);">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 2.5rem;">
+                    <div>
+                        <h2 class="grid-title" style="margin-bottom: 0.5rem;">Corporate & Commercial</h2>
+                        <p style="color: var(--text-muted); max-width: 600px;">Providing a robust framework for global
+                            operations, from seed-stage financing to multi-jurisdictional divestitures.</p>
+                    </div>
+                    <div class="stat-num" style="font-size: 2.5rem; opacity: 0.3;">01</div>
+                </div>
+                <div class="grid-asymmetric" style="margin-top: 1rem; row-gap: 2rem;">
+                    <div class="grid-item"
+                        style="height: auto; padding: 2.5rem; grid-column: span 4; background: rgba(255,255,255,0.02);">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
+                        <h3 style="margin-bottom: 1rem;">M&A Advisory</h3>
+                        <p class="grid-desc" style="opacity: 1; transform: none;">Full-lifecycle support for asset
+                            purchases, share swaps, and spin-offs.</p>
+                    </div>
+                    <div class="grid-item"
+                        style="height: auto; padding: 2.5rem; grid-column: span 4; background: rgba(255,255,255,0.02);">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">📊</div>
+                        <h3 style="margin-bottom: 1rem;">Capital Markets</h3>
+                        <p class="grid-desc" style="opacity: 1; transform: none;">Advising on IPOs, private placements,
+                            and debt restructuring.</p>
+                    </div>
+                    <div class="grid-item"
+                        style="height: auto; padding: 2.5rem; grid-column: span 4; background: rgba(255,255,255,0.02);">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🛡️</div>
+                        <h3 style="margin-bottom: 1rem;">Governance</h3>
+                        <p class="grid-desc" style="opacity: 1; transform: none;">Board advisory, fiduciary duties, and
+                            crisis management.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Practice Areas Expanded -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div class="glass-card" style="padding: 2.5rem;">
+                    <h3 class="gold-text"
+                        style="font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+                        <span style="font-size: 1.2rem;">⚖️</span> High-Stakes Litigation
+                    </h3>
+                    <ul style="list-style: none; color: var(--text-muted); line-height: 2;">
+                        <li style="display: flex; justify-content: space-between;"><span>• Class Action Defense</span>
+                            <span style="color: var(--primary-1); font-size: 0.7rem;">TOP TIER</span>
+                        </li>
+                        <li>• Securities Litigation</li>
+                        <li>• White Collar Defense</li>
+                        <li>• Multi-District Disputes</li>
+                        <li>• Appellate Practice</li>
+                        <li>• Crisis Communications</li>
+                    </ul>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem;">
+                    <h3 class="gold-text"
+                        style="font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+                        <span style="font-size: 1.2rem;">💎</span> Private Client
+                    </h3>
+                    <ul style="list-style: none; color: var(--text-muted); line-height: 2;">
+                        <li>• Family Office Counsel</li>
+                        <li>• Cross-Border Tax</li>
+                        <li>• Philanthropy Strategy</li>
+                        <li>• Succession Planning</li>
+                        <li>• Asset Protection</li>
+                        <li>• Art & Luxury Assets</li>
+                    </ul>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem;">
+                    <h3 class="gold-text"
+                        style="font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+                        <span style="font-size: 1.2rem;">🏢</span> Institutional RE
+                    </h3>
+                    <ul style="list-style: none; color: var(--text-muted); line-height: 2;">
+                        <li>• Portfolio Acquisitions</li>
+                        <li>• REIT Structuring</li>
+                        <li>• Joint Ventures</li>
+                        <li>• Hospitality & Leisure</li>
+                        <li>• Environmental Risk</li>
+                        <li>• Distressed Assets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Tiers (New Section) -->
+    <section class="section-premium" style="background: var(--bg-1);">
+        <div class="container">
+            <h2 class="display-text" style="font-size: 3.5rem; text-align: center; margin-bottom: 5rem;">Engagement
+                <span class="gold-text">Models.</span>
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+                <div class="glass-card" style="padding: 3rem; text-align: center;">
+                    <h4
+                        style="text-transform: uppercase; letter-spacing: 2px; color: var(--primary-1); margin-bottom: 1rem;">
+                        Project-Based</h4>
+                    <h3 style="font-size: 2rem; margin-bottom: 2rem;">Strategic Strike</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">High-intensity legal support for specific
+                        transactions, cases, or regulatory filings with fixed milestones.</p>
+                    <a href="contact.html" class="btn-magnetic" style="padding: 1rem 2rem; font-size: 0.75rem;">Inquire
+                        Now</a>
+                </div>
+                <div class="glass-card"
+                    style="padding: 3rem; text-align: center; border: 1px solid var(--primary-1); background: rgba(197, 160, 89, 0.05); transform: scale(1.05);">
+                    <div
+                        style="background: var(--primary-1); color: #000; font-size: 0.7rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1.5rem;">
+                        MOST SELECTED</div>
+                    <h4
+                        style="text-transform: uppercase; letter-spacing: 2px; color: var(--primary-1); margin-bottom: 1rem;">
+                        Retainer</h4>
+                    <h3 style="font-size: 2rem; margin-bottom: 2rem;">External General Counsel</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Ongoing, prioritized access to our full
+                        global workforce for day-to-day advisory and long-term risk management.</p>
+                    <a href="contact.html" class="btn-magnetic"
+                        style="padding: 1rem 2rem; font-size: 0.75rem; background: var(--primary-1); color: #000;">Download
+                        Prospectus</a>
+                </div>
+                <div class="glass-card" style="padding: 3rem; text-align: center;">
+                    <h4
+                        style="text-transform: uppercase; letter-spacing: 2px; color: var(--primary-1); margin-bottom: 1rem;">
+                        Consultative</h4>
+                    <h3 style="font-size: 2rem; margin-bottom: 2rem;">Specialized Advisory</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Hourly or flat-fee consultation for
+                        complex legal opinions, board sessions, or internal audits.</p>
+                    <a href="contact.html" class="btn-magnetic" style="padding: 1rem 2rem; font-size: 0.75rem;">Request
+                        Briefing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Approach (New Content) -->
+    <section class="section-premium" style="background: var(--bg-1);">
+        <div class="container">
+            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Our <span
+                    class="gold-text">Methodology.</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div class="glass-card" style="padding: 2rem;">
+                    <span
+                        style="font-size: 4rem; color: var(--primary-1); font-family: 'Playfair Display', serif; opacity: 0.5;">01</span>
+                    <h3 style="margin: 1rem 0;">Discovery</h3>
+                    <p style="color: var(--text-muted);">We begin with a deep dive into your business objectives,
+                        ensuring legal strategy aligns with commercial goals.</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem;">
+                    <span
+                        style="font-size: 4rem; color: var(--primary-1); font-family: 'Playfair Display', serif; opacity: 0.5;">02</span>
+                    <h3 style="margin: 1rem 0;">Strategy</h3>
+                    <p style="color: var(--text-muted);">Developing a bespoke roadmap that anticipates regulatory
+                        hurdles and capitalizes on opportunities.</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem;">
+                    <span
+                        style="font-size: 4rem; color: var(--primary-1); font-family: 'Playfair Display', serif; opacity: 0.5;">03</span>
+                    <h3 style="margin: 1rem 0;">Execution</h3>
+                    <p style="color: var(--text-muted);">Relentless advocacy and precise implementation to secure the
+                        optimal outcome.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Client Experience (New Section) -->
+    <section class="section-premium">
+        <div class="container">
+            <h2 class="display-text" style="font-size: 3rem; text-align: center; margin-bottom: 4rem;">The Client <span
+                    class="gold-text">Experience.</span></h2>
+
+            <div style="background: var(--surface-light); padding: 4rem; border: 1px solid var(--border-glass);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                        <h3 style="margin-bottom: 1rem;">Dedicated Teams</h3>
+                        <p style="color: var(--text-muted);">Every client is assigned a partner-led team that remains
+                            consistent throughout the engagement.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                        <h3 style="margin-bottom: 1rem;">Rapid Response</h3>
+                        <p style="color: var(--text-muted);">24/7 availability for urgent matters through our secure
+                            client portal and direct lines.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                        <h3 style="margin-bottom: 1rem;">Transparent Billing</h3>
+                        <p style="color: var(--text-muted);">Real-time budget tracking and alternative fee arrangements
+                            tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Industry Verticals -->
+    <section class="section-premium">
+        <div class="container">
+            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Industries <span
+                    class="gold-text">Served.</span></h2>
+
+            <div class="grid-asymmetric" style="margin-top: 0; gap: 2rem;">
+                <!-- Banking -->
+                <div class="glass-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    <div
+                        style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
+                        🏦</div>
+                    <div>
+                        <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: var(--text-main); line-height: 1.2;">
+                            Banking <br>& Finance</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">Regulatory compliance,
+                            fintech advisory, and complex loan structuring for global financial institutions.</p>
+                    </div>
+                </div>
+                <!-- Healthcare -->
+                <div class="glass-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    <div
+                        style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
+                        ⚕️</div>
+                    <div>
+                        <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: var(--text-main); line-height: 1.2;">
+                            Healthcare <br>& Life Sciences</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">FDA regulatory matters,
+                            high-stakes patent litigation, and strategic M&A within the biotech sector.</p>
+                    </div>
+                </div>
+                <!-- Tech -->
+                <div class="glass-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    <div
+                        style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
+                        💻</div>
+                    <div>
+                        <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: var(--text-main); line-height: 1.2;">
+                            Technology <br>& Media</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">Data privacy protection,
+                            IP defense, and complex SaaS agreement negotiation for digital-first enterprises.</p>
+                    </div>
+                </div>
+                <!-- Energy -->
+                <div class="glass-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    <div
+                        style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
+                        ⚡</div>
+                    <div>
+                        <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: var(--text-main); line-height: 1.2;">
+                            Energy & <br>Infrastructure</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7;">Project finance,
+                            environmental compliance, and multi-jurisdictional transactions for sustainable energy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Professional) -->
+    <footer class="footer-premium" style="padding: 6rem 5% 2rem; background: #0b0b0b;">
+        <div class="container"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem;">
+
+            <!-- Column 1: Brand Info -->
+            <div style="max-width: 300px;">
+                <a href="index.html" class="nav-logo"
+                    style="font-size: 1.5rem; margin-bottom: 1.5rem; display: block;">LexCounsel<span
+                        class="gold-text">.</span></a>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.9rem; margin-bottom: 2rem;">
+                    Providing sophisticated legal counsel for the world's most innovative companies. Global reach,
+                    unyielding dedication.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Firm</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                            style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                            style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                            style="color: var(--text-muted); text-decoration: none;">Practice Areas</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                            style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="#"
+                            style="color: var(--text-muted); text-decoration: none;">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Contact</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                        <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">Headquarters</strong>
+                        100 Legal Ave, Suite 500<br>New York, NY 10001
+                    </li>
+                    <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                        <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">Inquiries</strong>
+                        +1 (212) 555-0199<br>hello@lexcounsel.com
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter & Social -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Stay Informed</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Subscribe to our legal
+                    briefing.</p>
+                <form style="display: flex; gap: 0.5rem; margin-bottom: 2rem;">
+                    <input type="email" placeholder="Email Address"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); padding: 0.8rem; color: #fff; width: 100%;">
+                    <button type="submit"
+                        style="background: var(--primary-1); border: none; color: #fff; padding: 0 1rem; cursor: pointer;">&rarr;</button>
+                </form>
+
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="LinkedIn">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="Twitter">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="Instagram">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+            <div>&copy; 2026 LexCounsel. All rights reserved.</div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

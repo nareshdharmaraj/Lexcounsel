@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexCounsel - Premium Legal Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="nav-component.css">
+    <link rel="stylesheet" href="rtl.css">
+    <style>
+        /* Specific Styles for Home 2 Creative Elements */
+        .globe-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            perspective: 1200px;
+        }
+
+        .earth-grid {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            transform: rotateX(15deg);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            background: radial-gradient(circle at center, rgba(30, 41, 59, 0.3), transparent 70%);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .earth-grid:hover {
+            transform: rotateX(5deg) scale(1.02);
+        }
+
+        .world-map-texture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 20px rgba(58, 190, 255, 0.2));
+            mix-blend-mode: screen;
+        }
+
+        .city-marker {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--primary-1), 0 0 30px var(--primary-1);
+            z-index: 10;
+            animation: pulse-glow 3s infinite;
+        }
+
+        .city-marker::after {
+            content: attr(data-label);
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--primary-1);
+            white-space: nowrap;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: 1px solid var(--primary-1);
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .city-marker:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .city-marker:hover {
+            background: #fff;
+            transform: scale(1.6);
+            box-shadow: 0 0 30px var(--primary-1), 0 0 60px var(--primary-1);
+        }
+
+        .connections-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .connection-path {
+            fill: none;
+            stroke: var(--primary-1);
+            stroke-width: 1.5;
+            stroke-dasharray: 5, 5;
+            animation: dash 60s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                box-shadow: 0 0 15px var(--primary-1);
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.8;
+                box-shadow: 0 0 25px var(--primary-1);
+            }
+        }
+
+        .stats-overlay {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: -4rem;
+            /* Overlap */
+            position: relative;
+            z-index: 20;
+            padding: 0 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-20px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-value {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-1) 0%, #fff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -2px;
+            line-height: 1;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+        }
+
+        .stat-label {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            font-weight: 800;
+            opacity: 0.9;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Light Theme Overrides for Stats */
+        .light-theme .stat-card {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.15);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        .light-theme .stat-card:hover {
+            border-color: var(--primary-1);
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+        }
+
+        .light-theme .stat-value {
+            background: linear-gradient(135deg, var(--primary-1) 0%, #0f172a 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: none;
+        }
+
+        .light-theme .stat-label {
+            color: #0f172a;
+            opacity: 0.8;
+            text-shadow: none;
+        }
+
+        /* Stats Ribbon Light Mode */
+        .light-theme .stats-ribbon {
+            background: #ffffff;
+            border-top: 1px solid rgba(15, 23, 42, 0.1);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+        }
+
+        .light-theme .stat-num {
+            color: #0f172a;
+        }
+
+        @media (max-width: 768px) {
+            .stats-overlay {
+                grid-template-columns: 1fr 1fr;
+                margin-top: 2rem;
+            }
+
+            .earth-grid {
+                height: 300px;
+            }
+        }
+
+        /* Enhanced Practice Grid Styles */
+        .grid-item {
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Align to top */
+            position: relative;
+        }
+
+        .grid-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, var(--primary-1) 0%, transparent 70%);
+            opacity: 0.03;
+            filter: blur(40px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .grid-metric {
+            font-size: 0.8rem;
+            color: var(--primary-1);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+            z-index: 1;
+        }
+
+        .grid-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            z-index: 1;
+        }
+
+        .grid-sub-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            z-index: 1;
+        }
+
+        .grid-sub-list li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .grid-sub-list li::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: var(--primary-1);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .grid-action-link {
+            margin-top: auto;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+            z-index: 1;
+        }
+
+        .grid-item:hover .grid-action-link {
+            gap: 1rem;
+            color: var(--primary-1);
+        }
+
+        .grid-desc {
+            opacity: 0.8;
+            transform: none;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        /* Light Theme Overrides for Grid Items */
+        .light-theme .grid-item {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .light-theme .grid-item:hover {
+            border-color: var(--primary-1);
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo">LexCounsel<span class="gold-text">.</span></a>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" aria-label="Menu">☰</button>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-header">Home <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <div class="mobile-dropdown-content">
+                    <a href="index.html" class="mobile-sub-link">Home 1</a>
+                    <a href="home-2.html" class="mobile-sub-link">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+            <a href="services.html" class="mobile-nav-link">Practice Areas</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-header">Dashboards <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <div class="mobile-dropdown-content">
+                    <a href="dashboard-user.html" class="mobile-sub-link">User Dashboard</a>
+                    <a href="dashboard-admin.html" class="mobile-sub-link">Admin Dashboard</a>
+                </div>
+            </div>
+            <a href="login.html" class="mobile-nav-link">Sign In</a>
+        </div>
+
+        <!-- Center Links -->
+        <div class="nav-center">
+            <div class="nav-item">
+                <button class="nav-link">
+                    HOME
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Home 1</a>
+                    <a href="home-2.html" class="dropdown-item">Home 2</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">ABOUT US</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">SERVICES</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </div>
+
+            <div class="nav-item">
+                <button class="nav-link">
+                    DASHBOARDS
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="dashboard-user.html" class="dropdown-item">User Dashboard</a>
+                    <a href="dashboard-admin.html" class="dropdown-item">Admin Dashboard</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Right Icons -->
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">LOGIN</a>
+            <button class="nav-icon-btn" id="rtlToggle" aria-label="Language">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
+            </button>
+            <button class="nav-icon-btn" id="themeToggle" aria-label="Toggle Theme">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cinematic Hero -->
+    <section class="hero-cinematic" style="padding-top: 10rem;">
+        <!-- Animated Mesh Background -->
+        <div class="mesh-bg"></div>
+
+        <div class="hero-content">
+            <p class="hero-subtitle">Est. 2001 &mdash; Global Legal Excellence</p>
+            <h1 class="display-text">
+                Defending Your <br>
+                <span class="gold-text">Legacy & Future</span>
+            </h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 2rem auto; font-size: 1.1rem;">
+                We provide sophisticated legal counsel for complex litigation and corporate matters.
+                Experience the intersection of tradition and innovation.
+            </p>
+
+            <div style="margin-top: 3rem;">
+                <a href="#expertise" class="btn-magnetic" style="background: var(--surface-glass);">Explore Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (New Section) -->
+    <section class="section-premium">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <h2 class="display-text" style="font-size: 3rem; margin-bottom: 2rem;">Why Leading <br><span
+                            class="gold-text">Companies Trust Us.</span></h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        In a world of complex regulations and high-stakes litigation, you need more than just legal
+                        advice. You need a strategic partner who understands your business objectives.
+                    </p>
+                    <ul style="list-style: none; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: var(--primary-1); font-size: 1.2rem;">✓</span>
+                            <span style="color: var(--text-main);">Global Reach, Local Expertise</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: var(--primary-1); font-size: 1.2rem;">✓</span>
+                            <span style="color: var(--text-main);">Top-Tier Litigation Team</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: var(--primary-1); font-size: 1.2rem;">✓</span>
+                            <span style="color: var(--text-main);">Innovation-Driven Solutions</span>
+                        </li>
+                    </ul>
+                    <a href="about.html" class="btn-magnetic">Our Firm Profile</a>
+                </div>
+                <div class="glass-card"
+                    style="height: 400px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, var(--surface-glass), transparent); overflow: hidden;">
+                    <!-- Abstract Trust Visual -->
+                    <img src="assets/trust-visual.png" alt="Legal Excellence"
+                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process (New Section) -->
+    <section class="section-premium" style="background: var(--bg-1);">
+        <div class="container" style="text-align: center;">
+            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">The <span
+                    class="gold-text">LexCounsel Approach.</span></h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
+                <!-- Step 1 -->
+                <div class="glass-card"
+                    style="text-align: left; padding: 3rem; border-top: 1px solid var(--primary-1);">
+                    <div
+                        style="font-size: 3.5rem; font-family: 'Playfair Display', serif; color: var(--primary-1); line-height: 1; margin-bottom: 1.5rem; opacity: 0.5;">
+                        01</div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Discovery</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">We dive deep to
+                        understand every nuance of your case or business challenge from the ground up.</p>
+                    <ul
+                        style="list-style: none; padding: 0; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Conflict Analysis</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Resource Audit</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Evidence Review</li>
+                    </ul>
+                </div>
+                <!-- Step 2 -->
+                <div class="glass-card"
+                    style="text-align: left; padding: 3rem; transform: translateY(30px); border-top: 1px solid var(--primary-1);">
+                    <div
+                        style="font-size: 3.5rem; font-family: 'Playfair Display', serif; color: var(--primary-1); line-height: 1; margin-bottom: 1.5rem; opacity: 0.5;">
+                        02</div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Strategy</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Developing a bespoke
+                        legal roadmap tailored to your specific goals and risk appetite.</p>
+                    <ul
+                        style="list-style: none; padding: 0; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Tactical Roadmapping</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Risk Assessment</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Benchmark Definition</li>
+                    </ul>
+                </div>
+                <!-- Step 3 -->
+                <div class="glass-card"
+                    style="text-align: left; padding: 3rem; border-top: 1px solid var(--primary-1);">
+                    <div
+                        style="font-size: 3.5rem; font-family: 'Playfair Display', serif; color: var(--primary-1); line-height: 1; margin-bottom: 1.5rem; opacity: 0.5;">
+                        03</div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Execution</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Relentless advocacy
+                        and precision in every filing, negotiation, and high-stakes argument.</p>
+                    <ul
+                        style="list-style: none; padding: 0; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Precision Filings</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Dynamic Negotiation</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Courtroom Advocacy</li>
+                    </ul>
+                </div>
+                <!-- Step 4 -->
+                <div class="glass-card"
+                    style="text-align: left; padding: 3rem; transform: translateY(30px); border-top: 1px solid var(--primary-1);">
+                    <div
+                        style="font-size: 3.5rem; font-family: 'Playfair Display', serif; color: var(--primary-1); line-height: 1; margin-bottom: 1.5rem; opacity: 0.5;">
+                        04</div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Resolution</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Delivering results
+                        that protect your long-term interests and secure your corporate future.</p>
+                    <ul
+                        style="list-style: none; padding: 0; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Finality Assurance</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Outcome Optimization</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span
+                                style="color: var(--primary-1);">+</span> Post-Case Advisory</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Insights (New Section) -->
+    <section class="section-premium">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+                <h2 class="display-text" style="font-size: 3rem; margin: 0;">Legal <span
+                        class="gold-text">Insights.</span></h2>
+                <a href="#" class="btn-magnetic">View All Articles</a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Article 1 -->
+                <article class="glass-card" style="padding: 0; overflow: hidden; transition: transform 0.3s;">
+                    <div
+                        style="height: 200px; background: url('assets/insight-sec.png'); background-size: cover; background-position: center;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <span
+                            style="font-size: 0.8rem; color: var(--primary-1); text-transform: uppercase; letter-spacing: 0.1em;">Corporate
+                            Law</span>
+                        <h3 style="margin: 1rem 0; font-size: 1.5rem;">Navigating New SEC Regulations in 2025</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Key takeaways for public companies
+                            facing increased scrutiny on ESG disclosures.</p>
+                        <a href="#"
+                            style="color: #fff; text-decoration: none; border-bottom: 1px solid var(--primary-1);">Read
+                            Article</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="glass-card"
+                    style="padding: 0; overflow: hidden; transition: transform 0.3s; transform: translateY(20px);">
+                    <div
+                        style="height: 200px; background: url('assets/insight-ai.png'); background-size: cover; background-position: center;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <span
+                            style="font-size: 0.8rem; color: var(--primary-1); text-transform: uppercase; letter-spacing: 0.1em;">Tech
+                            & IP</span>
+                        <h3 style="margin: 1rem 0; font-size: 1.5rem;">AI and Copyright: The Legal Frontier</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Understanding the implications of
+                            generative AI on intellectual property rights.</p>
+                        <a href="#"
+                            style="color: #fff; text-decoration: none; border-bottom: 1px solid var(--primary-1);">Read
+                            Article</a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="glass-card" style="padding: 0; overflow: hidden; transition: transform 0.3s;">
+                    <div
+                        style="height: 200px; background: url('assets/insight-litigation.png'); background-size: cover; background-position: center;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <span
+                            style="font-size: 0.8rem; color: var(--primary-1); text-transform: uppercase; letter-spacing: 0.1em;">Litigation</span>
+                        <h3 style="margin: 1rem 0; font-size: 1.5rem;">Class Action Trends to Watch</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A comprehensive analysis of recent
+                            federal rulings and their impact on defense strategies.</p>
+                        <a href="#"
+                            style="color: #fff; text-decoration: none; border-bottom: 1px solid var(--primary-1);">Read
+                            Article</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Reach (Creative REDESIGN) -->
+    <section class="section-premium" style="background: var(--bg-1); padding-bottom: 6rem; overflow: hidden;">
+        <div class="container" style="text-align: center; position: relative; z-index: 10;">
+            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 2rem;">Global <span
+                    class="gold-text">Reach.</span></h2>
+            <p
+                style="color: var(--text-muted); margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                With strategic alliances in over 40 countries, we provide seamless legal support wherever your business
+                operates.
+            </p>
+
+            <!-- Creative 3D Map Container -->
+            <div class="globe-container">
+                <div class="earth-grid">
+                    <img src="assets/world_map_dark.png" alt="Global Network" class="world-map-texture">
+
+                    <!-- Pulsing Cities -->
+                    <div class="city-marker" style="top: 32%; left: 25%; animation-delay: 0s;" data-label="New York">
+                    </div>
+                    <div class="city-marker" style="top: 40%; left: 49%; animation-delay: 0.5s;" data-label="London">
+                    </div>
+                    <div class="city-marker" style="top: 55%; left: 58%; animation-delay: 1s;" data-label="Dubai"></div>
+                    <div class="city-marker" style="top: 38%; left: 82%; animation-delay: 1.5s;" data-label="Tokyo">
+                    </div>
+                    <div class="city-marker" style="top: 70%; left: 88%; animation-delay: 2s;" data-label="Sydney">
+                    </div>
+
+                    <!-- Connection Lines (SVG Overlay) -->
+                    <svg class="connections-svg" viewBox="0 0 1000 500">
+                        <path class="connection-path" d="M250,160 Q490,200 490,200" />
+                        <path class="connection-path" d="M490,200 Q580,275 580,275" />
+                        <path class="connection-path" d="M580,275 Q820,190 820,190" />
+                        <path class="connection-path" d="M820,190 Q880,350 880,350" />
+                    </svg>
+
+                </div>
+
+                <!-- Floating Stats Cards -->
+                <div class="stats-overlay">
+                    <div class="stat-card">
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">Continents</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Offices</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">85+</div>
+                        <div class="stat-label">Attorneys</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Operation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter (New Section) -->
+    <section class="section-premium">
+        <div class="container" style="max-width: 600px;">
+            <div class="glass-card" style="padding: 4rem; text-align: center;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Stay Ahead of the Curve</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Join 15,000+ executives receiving our weekly
+                    legal intelligence briefing.</p>
+
+                <form style="display: flex; gap: 1rem;">
+                    <input type="email" placeholder="professional@company.com"
+                        style="flex: 1; padding: 1rem; background: var(--bg-1); border: 1px solid var(--border-glass); color: #fff; border-radius: 4px;">
+                    <button type="submit" class="btn-magnetic">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Stats Ribbon -->
+    <div class="stats-ribbon">
+        <div class="stats-container">
+            <div class="stat-premium">
+                <span class="stat-num" data-target="25">0</span>
+                <span class="stat-label">Years of Excellence</span>
+            </div>
+            <div class="stat-premium">
+                <span class="stat-num" data-target="1500">0</span>
+                <span class="stat-label">Cases Won</span>
+            </div>
+            <div class="stat-premium">
+                <span class="stat-num" data-target="850">0</span>
+                <span class="stat-label">Trusted Clients</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asymmetrical Practice Grid -->
+    <section id="expertise" class="section-premium">
+        <h2 class="display-text" style="font-size: 4rem; text-align: left; margin-bottom: 4rem;">
+            Our Area of <br><span class="gold-text">Expertise.</span>
+        </h2>
+
+        <div class="grid-asymmetric">
+            <!-- Corporate (Standard) -->
+            <div class="grid-item">
+                <span class="grid-metric">Fortune 500 Selection</span>
+                <div class="grid-icon">⚖️</div>
+                <h3 class="grid-title">Corporate Law</h3>
+                <p class="grid-desc">Navigating multi-billion dollar mergers and high-stakes governance.</p>
+                <ul class="grid-sub-list">
+                    <li>Mergers & Acquisitions</li>
+                    <li>Venture Capital Strategy</li>
+                    <li>Corporate Restructuring</li>
+                </ul>
+                <a href="#" class="grid-action-link">Explore Practice &rarr;</a>
+            </div>
+
+            <!-- Litigation (Wide) -->
+            <div class="grid-item">
+                <span class="grid-metric">$12B+ Recovered</span>
+                <div class="grid-icon">🏛️</div>
+                <h3 class="grid-title">Complex Litigation</h3>
+                <p class="grid-desc">Unyielding advocacy in federal and cross-border disputes where the stakes define
+                    the future.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <ul class="grid-sub-list">
+                        <li>Class Action Defense</li>
+                        <li>Commercial Arbitration</li>
+                        <li>White Collar Defense</li>
+                    </ul>
+                    <ul class="grid-sub-list">
+                        <li>Appellate Litigation</li>
+                        <li>Regulatory Inquiries</li>
+                        <li>Fraud Investigations</li>
+                    </ul>
+                </div>
+                <a href="#" class="grid-action-link">Explore Case Studies &rarr;</a>
+            </div>
+
+            <!-- IP (Standard) -->
+            <div class="grid-item">
+                <span class="grid-metric">1,200+ Active Patents</span>
+                <div class="grid-icon">💡</div>
+                <h3 class="grid-title">Intellectual Property</h3>
+                <p class="grid-desc">Defending the innovations and trade secrets of tomorrow's tech leaders.</p>
+                <ul class="grid-sub-list">
+                    <li>Patent Prosecution</li>
+                    <li>Brand Portfolio Mgmt</li>
+                    <li>IP Licensing Agreements</li>
+                </ul>
+                <a href="#" class="grid-action-link">View IP Solutions &rarr;</a>
+            </div>
+
+            <!-- Real Estate (Standard) -->
+            <div class="grid-item">
+                <span class="grid-metric">50+ Global Developments</span>
+                <div class="grid-icon">🏢</div>
+                <h3 class="grid-title">Real Estate</h3>
+                <p class="grid-desc">Facilitating landmark commercial acquisitions and complex land-use projects.</p>
+                <ul class="grid-sub-list">
+                    <li>Commercial RE Finance</li>
+                    <li>Zoning & Entitlements</li>
+                    <li>REIT Advisory Services</li>
+                </ul>
+                <a href="#" class="grid-action-link">Market Insights &rarr;</a>
+            </div>
+
+            <!-- Private Wealth (Standard) -->
+            <div class="grid-item">
+                <span class="grid-metric">15+ Jurisdictions</span>
+                <div class="grid-icon">💎</div>
+                <h3 class="grid-title">Private Wealth</h3>
+                <p class="grid-desc">Besopke wealth preservation strategies for ultra-high-net-worth individuals.</p>
+                <ul class="grid-sub-list">
+                    <li>Estate & Trust Planning</li>
+                    <li>Family Office Counsel</li>
+                    <li>Asset Protection Trusts</li>
+                </ul>
+                <a href="#" class="grid-action-link">Private Counsel &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Premium Slider Effect - simplified for HTML/CSS) -->
+    <section class="section-premium" style="background: var(--surface-light);">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div style="font-size: 3rem; color: var(--primary-1); margin-bottom: 2rem;">"</div>
+            <h3 style="font-size: 2rem; line-height: 1.4; margin-bottom: 2rem;">
+                LexCounsel transformed our company's legal strategy. Their attention to detail and aggressive defense
+                saved us millions in potential liabilities.
+            </h3>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                <img src="assets/leader-sarah.png"
+                    style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                <!-- Placeholder User -->
+                <div style="text-align: left;">
+                    <div style="font-weight: 600; color: #fff;">Sarah Jenkins</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">CEO, TechDynamics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Leadership Team -->
+    <section class="section-premium">
+        <div class="container">
+            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Firm <span
+                    class="gold-text">Leadership.</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <!-- Leader 1 -->
+                <div class="glass-card" style="padding: 0; overflow: hidden; text-align: center;">
+                    <div
+                        style="height: 250px; background: #222; display: flex; align-items: flex-end; justify-content: center; overflow: hidden;">
+                        <img src="assets/leader-sarah.png"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" alt="Managing Partner">
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Eleanor Sterling</h3>
+                        <p
+                            style="color: var(--primary-1); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+                            Managing Partner</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Former Federal Prosecutor with 25 years
+                            of trial experience in white-collar defense.</p>
+                    </div>
+                </div>
+                <!-- Leader 2 -->
+                <div class="glass-card" style="padding: 0; overflow: hidden; text-align: center;">
+                    <div
+                        style="height: 250px; background: #222; display: flex; align-items: flex-end; justify-content: center; overflow: hidden;">
+                        <img src="assets/leader-julian.png"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" alt="Partner">
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">James Vance</h3>
+                        <p
+                            style="color: var(--primary-1); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+                            Head of Corporate</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Specializing in complex M&A and
+                            international arbitrage for Fortune 100 companies.</p>
+                    </div>
+                </div>
+                <!-- Leader 3 -->
+                <div class="glass-card" style="padding: 0; overflow: hidden; text-align: center;">
+                    <div
+                        style="height: 250px; background: #222; display: flex; align-items: flex-end; justify-content: center; overflow: hidden;">
+                        <img src="assets/leader-alexandra.png"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" alt="Partner">
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Elena Rostova</h3>
+                        <p
+                            style="color: var(--primary-1); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+                            Head of IP & Tech</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Pioneering legal frameworks for AI and
+                            blockchain technologies in global markets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Professional) -->
+    <footer class="footer-premium" style="padding: 6rem 5% 2rem; background: #0b0b0b;">
+        <div class="container"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem;">
+
+            <!-- Column 1: Brand Info -->
+            <div style="max-width: 300px;">
+                <a href="index.html" class="nav-logo"
+                    style="font-size: 1.5rem; margin-bottom: 1.5rem; display: block;">LexCounsel<span
+                        class="gold-text">.</span></a>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.9rem; margin-bottom: 2rem;">
+                    Providing sophisticated legal counsel for the world's most innovative companies. Global reach,
+                    unyielding dedication.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Firm</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                            style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                            style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                            style="color: var(--text-muted); text-decoration: none;">Practice Areas</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                            style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="#"
+                            style="color: var(--text-muted); text-decoration: none;">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Contact</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                        <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">Headquarters</strong>
+                        100 Legal Ave, Suite 500<br>New York, NY 10001
+                    </li>
+                    <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                        <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">Inquiries</strong>
+                        +1 (212) 555-0199<br>hello@lexcounsel.com
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter & Social -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Stay Informed</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Subscribe to our legal
+                    briefing.</p>
+                <form style="display: flex; gap: 0.5rem; margin-bottom: 2rem;">
+                    <input type="email" placeholder="Email Address"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); padding: 0.8rem; color: #fff; width: 100%;">
+                    <button type="submit"
+                        style="background: var(--primary-1); border: none; color: #fff; padding: 0 1rem; cursor: pointer;">&rarr;</button>
+                </form>
+
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="LinkedIn">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="Twitter">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="Instagram">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+            <div>&copy; 2026 LexCounsel. All rights reserved.</div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

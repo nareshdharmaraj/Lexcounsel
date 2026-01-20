@@ -1,0 +1,89 @@
+/* ===================================
+   RTL SUPPORT
+   =================================== */
+
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Navbar Flipping */
+html[dir="rtl"] .nav-link svg,
+html[dir="rtl"] .nav-icon-btn svg {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%) translateY(10px);
+    text-align: right;
+}
+
+html[dir="rtl"] .dropdown-item {
+    border-left: none;
+    border-right: 2px solid transparent;
+}
+
+html[dir="rtl"] .dropdown-item:hover {
+    border-right-color: var(--primary-1);
+}
+
+html[dir="rtl"] .nav-logo {
+    margin-left: 2rem;
+    margin-right: 0;
+}
+
+/* Content Flipping */
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-desc {
+    text-align: right;
+}
+
+html[dir="rtl"] .stat-premium {
+    text-align: center;
+    /* Stats can remain centered usually */
+}
+
+html[dir="rtl"] .grid-title,
+html[dir="rtl"] .grid-desc,
+html[dir="rtl"] .display-text {
+    text-align: right !important;
+}
+
+/* Margin/Padding Flips */
+html[dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+html[dir="rtl"] .mr-auto {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* Form Inputs */
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+    text-align: right;
+}
+
+/* Specific Component Tweaks */
+html[dir="rtl"] .service-detail-header,
+html[dir="rtl"] .about-grid,
+html[dir="rtl"] .contact-grid {
+    direction: rtl;
+}
+
+/* Icons in lists */
+html[dir="rtl"] .grid-icon {
+    float: right;
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+/* Footer */
+html[dir="rtl"] footer {
+    text-align: right;
+}

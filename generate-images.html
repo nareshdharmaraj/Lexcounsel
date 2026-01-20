@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        h1 {
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #10b981;
+        }
+
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📸 Placeholder Image Generator</h1>
+    <p>Click the button below to generate placeholder images for the law firm website. Images will be downloaded to your
+        Downloads folder.</p>
+
+    <button class="btn" onclick="generateAllImages()">Generate All Images</button>
+
+    <div id="status"></div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const images = [
+            { name: 'hero-justice', width: 1200, height: 800, text: 'Legal Excellence', gradient: ['#6366f1', '#8b5cf6'] },
+            { name: 'hero-court', width: 1200, height: 800, text: 'Justice & Law', gradient: ['#f97316', '#ec4899'] },
+            { name: 'about-office', width: 1000, height: 667, text: 'Our Office', gradient: ['#06b6d4', '#6366f1'] },
+            { name: 'client-1', width: 400, height: 400, text: 'Client 1', gradient: ['#8b5cf6', '#a78bfa'] },
+            { name: 'client-2', width: 400, height: 400, text: 'Client 2', gradient: ['#ec4899', '#f472b6'] },
+            { name: 'client-3', width: 400, height: 400, text: 'Client 3', gradient: ['#14b8a6', '#06b6d4'] },
+            { name: 'attorney-1', width: 600, height: 600, text: 'Attorney 1', gradient: ['#6366f1', '#818cf8'] },
+            { name: 'attorney-2', width: 600, height: 600, text: 'Attorney 2', gradient: ['#f97316', '#fb923c'] },
+            { name: 'attorney-3', width: 600, height: 600, text: 'Attorney 3', gradient: ['#8b5cf6', '#a78bfa'] },
+            { name: 'attorney-4', width: 600, height: 600, text: 'Attorney 4', gradient: ['#14b8a6', '#06b6d4'] }
+        ];
+
+        function generateImage(config) {
+            canvas.width = config.width;
+            canvas.height = config.height;
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, config.width, config.height);
+            gradient.addColorStop(0, config.gradient[0]);
+            gradient.addColorStop(1, config.gradient[1]);
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, config.width, config.height);
+
+            // Add pattern overlay
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            for (let i = 0; i < 50; i++) {
+                const x = Math.random() * config.width;
+                const y = Math.random() * config.height;
+                const size = Math.random() * 100 + 50;
+                ctx.beginPath();
+                ctx.arc(x, y, size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Add text
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.font = `bold ${config.width / 15}px Inter, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(config.text, config.width / 2, config.height / 2);
+
+            // Add dimensions text
+            ctx.font = `${config.width / 30}px Inter, sans-serif`;
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.fillText(`${config.width} × ${config.height}`, config.width / 2, config.height / 2 + config.width / 15);
+
+            // Download image
+            canvas.toBlob((blob) => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${config.name}.jpg`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.9);
+        }
+
+        function generateAllImages() {
+            const status = document.getElementById('status');
+            status.innerHTML = '<strong>Generating images...</strong><br>';
+
+            images.forEach((img, index) => {
+                setTimeout(() => {
+                    generateImage(img);
+                    status.innerHTML += `✓ Generated ${img.name}.jpg<br>`;
+
+                    if (index === images.length - 1) {
+                        status.innerHTML += '<br><strong style="color: #10b981;">✓ All images generated successfully!</strong><br>';
+                        status.innerHTML += '<small>Move the downloaded images to the assets/ folder.</small>';
+                    }
+                }, index * 500); // Delay to prevent browser blocking
+            });
+        }
+    </script>
+</body>
+
+</html>

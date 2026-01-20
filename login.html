@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LexCounsel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav-component.css">
+    <link rel="stylesheet" href="rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="light-theme">
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo">LexCounsel<span class="gold-text">.</span></a>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" aria-label="Menu">☰</button>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-header">Home <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <div class="mobile-dropdown-content">
+                    <a href="index.html" class="mobile-sub-link">Home 1</a>
+                    <a href="home-2.html" class="mobile-sub-link">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-nav-link">About Us</a>
+            <a href="services.html" class="mobile-nav-link">Practice Areas</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <div class="mobile-dropdown">
+                <a href="#" class="mobile-nav-link mobile-dropdown-header">Dashboards <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></a>
+                <div class="mobile-dropdown-content">
+                    <a href="dashboard-user.html" class="mobile-sub-link">User Dashboard</a>
+                    <a href="dashboard-admin.html" class="mobile-sub-link">Admin Dashboard</a>
+                </div>
+            </div>
+            <a href="login.html" class="mobile-nav-link">Sign In</a>
+        </div>
+
+        <!-- Center Links -->
+        <div class="nav-center">
+            <div class="nav-item">
+                <button class="nav-link">HOME <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></button>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Home 1</a>
+                    <a href="home-2.html" class="dropdown-item">Home 2</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="about.html" class="nav-link">ABOUT US</a></div>
+            <div class="nav-item"><a href="services.html" class="nav-link">SERVICES</a></div>
+            <div class="nav-item"><a href="contact.html" class="nav-link">CONTACT</a></div>
+            <div class="nav-item">
+                <button class="nav-link">DASHBOARDS <svg viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg></button>
+                <div class="dropdown-menu">
+                    <a href="dashboard-user.html" class="dropdown-item">User Dashboard</a>
+                    <a href="dashboard-admin.html" class="dropdown-item">Admin Dashboard</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Icons -->
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">LOGIN</a>
+            <button class="nav-icon-btn" id="rtlToggle" aria-label="Language">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
+            </button>
+            <button class="nav-icon-btn" id="themeToggle" aria-label="Toggle Theme">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Portal Content -->
+    <section class="section-premium" style="padding-top: 180px; min-height: 100vh; padding-bottom: 8rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+
+                <!-- Left Column: Information (New Elements) -->
+                <div>
+                    <h1 class="display-text" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Secure <span
+                            class="gold-text">Access.</span></h1>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem; line-height: 1.8;">
+                        Manage your legal matters with bank-grade security. The LexCounsel Portal puts your entire case
+                        history at your fingertips.
+                    </p>
+
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 40px; height: 40px; background: rgba(59, 130, 246, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #60a5fa;">
+                                <svg style="width: 20px;" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem;">24/7 Case Status</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Real-time updates on all
+                                    filings.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 40px; height: 40px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #34d399;">
+                                <svg style="width: 20px;" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-9-2c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem;">Secure Document Vault</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">End-to-end encrypted file
+                                    sharing.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 40px; height: 40px; background: rgba(245, 158, 11, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fbbf24;">
+                                <svg style="width: 20px;" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem;">Direct Attorney Line</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Priority messaging support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div>
+                    <div class="glass-card" style="padding: 0; overflow: hidden; position: sticky; top: 100px;">
+                        <!-- Auth Tabs -->
+                        <div style="display: flex; border-bottom: 1px solid var(--border-glass);">
+                            <button class="auth-tab-btn active" data-target="login"
+                                style="flex: 1; padding: 1.5rem; background: none; border: none; color: var(--text-main); font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.3s;">Login</button>
+                            <button class="auth-tab-btn" data-target="register"
+                                style="flex: 1; padding: 1.5rem; background: none; border: none; color: var(--text-muted); font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.3s;">Register</button>
+                        </div>
+
+                        <div style="padding: 3rem;">
+                            <!-- Login Form -->
+                            <div id="loginForm">
+                                <h2 style="text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">Welcome
+                                    Back</h2>
+                                <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Secure
+                                    Client
+                                    Portal Access</p>
+                                <form>
+                                    <div style="margin-bottom: 1.5rem;">
+                                        <label
+                                            style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Email
+                                            Address</label>
+                                        <input type="email"
+                                            style="width: 100%; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border-glass); border-radius: 4px; color: inherit;">
+                                    </div>
+                                    <div style="margin-bottom: 2rem;">
+                                        <label
+                                            style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Password</label>
+                                        <input type="password"
+                                            style="width: 100%; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border-glass); border-radius: 4px; color: inherit;">
+                                    </div>
+                                    <button type="submit" class="btn-magnetic"
+                                        style="width: 100%; text-align: center; cursor: pointer;">Sign
+                                        In</button>
+                                    <div style="margin-top: 2rem; text-align: center; font-size: 0.9rem;">
+                                        <a href="#" style="color: var(--text-muted);">Forgot Password?</a>
+                                    </div>
+                                    <div
+                                        style="margin-top: 2.5rem; border-top: 1px solid var(--border-glass); padding-top: 2rem;">
+                                        <p
+                                            style="text-align: center; color: var(--text-muted); font-size: 0.7rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;">
+                                            Secure Identity Provider</p>
+                                        <div style="display: flex; justify-content: center; gap: 1rem;">
+                                            <button type="button" class="glass-card"
+                                                style="padding: 0.8rem 2rem; display: flex; align-items: center; gap: 0.8rem; cursor: pointer; border-radius: 4px; transition: all 0.3s; width: 100%; justify-content: center;">
+                                                <i class="fab fa-google" style="font-size: 1.2rem; color: #DB4437;"></i>
+                                                <span style="font-size: 0.9rem; font-weight: 600;">Continue with
+                                                    Google</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Register Form -->
+                            <div id="registerForm" style="display: none;">
+                                <h2 style="text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">Create
+                                    Account</h2>
+                                <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Join
+                                    LexCounsel
+                                    Firm</p>
+                                <form>
+                                    <div
+                                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">First
+                                                Name</label>
+                                            <input type="text"
+                                                style="width: 100%; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border-glass); border-radius: 4px; color: inherit;">
+                                        </div>
+                                        <div>
+                                            <label
+                                                style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Last
+                                                Name</label>
+                                            <input type="text"
+                                                style="width: 100%; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border-glass); border-radius: 4px; color: inherit;">
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1.5rem;">
+                                        <label
+                                            style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Email
+                                            Address</label>
+                                        <input type="email"
+                                            style="width: 100%; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border-glass); border-radius: 4px; color: inherit;">
+                                    </div>
+                                    <div style="margin-bottom: 2rem;">
+                                        <label
+                                            style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Password</label>
+                                        <input type="password"
+                                            style="width: 100%; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border-glass); border-radius: 4px; color: inherit;">
+                                    </div>
+                                    <button type="submit" class="btn-magnetic"
+                                        style="width: 100%; text-align: center; cursor: pointer;">Register</button>
+                                    <div
+                                        style="margin-top: 2.5rem; border-top: 1px solid var(--border-glass); padding-top: 2rem;">
+                                        <p
+                                            style="text-align: center; color: var(--text-muted); font-size: 0.7rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;">
+                                            Verified Registration</p>
+                                        <div style="display: flex; justify-content: center; gap: 1rem;">
+                                            <button type="button" class="glass-card"
+                                                style="padding: 0.8rem 2rem; display: flex; align-items: center; gap: 0.8rem; cursor: pointer; border-radius: 4px; transition: all 0.3s; width: 100%; justify-content: center;">
+                                                <i class="fab fa-google" style="font-size: 1.2rem; color: #DB4437;"></i>
+                                                <span style="font-size: 0.9rem; font-weight: 600;">Sign up with
+                                                    Google</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.8rem;">
+                        Protected by 256-bit Encryption. Unauthorized access is prohibited.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+    <!-- New Scrollable Content: Security Features -->
+    <div style="margin-top: 6rem;">
+        <h2 class="display-text" style="text-align: center; font-size: 2.5rem; margin-bottom: 4rem;">Uncompromising
+            <span class="gold-text">Security.</span>
+        </h2>
+
+        <div class="grid-asymmetric" style="margin-top: 0; gap: 2rem;">
+            <div class="grid-item" style="height: auto; min-height: 250px; grid-column: span 4;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-1);">🛡️</div>
+                <h3 class="grid-title">Military-Grade Encryption</h3>
+                <p class="grid-desc" style="opacity: 1; transform: translateY(0);">
+                    All data is encrypted in transit and at rest using AES-256 protocols, ensuring your sensitive legal
+                    documents remain confidential.
+                </p>
+            </div>
+            <div class="grid-item" style="height: auto; min-height: 250px; grid-column: span 4;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-1);">🔐</div>
+                <h3 class="grid-title">Multi-Factor Authentication</h3>
+                <p class="grid-desc" style="opacity: 1; transform: translateY(0);">
+                    Advanced biometric and hardware token support creates an impenetrable barrier against unauthorized
+                    access.
+                </p>
+            </div>
+            <div class="grid-item" style="height: auto; min-height: 250px; grid-column: span 4;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-1);">👁️</div>
+                <h3 class="grid-title">24/7 Threat Monitoring</h3>
+                <p class="grid-desc" style="opacity: 1; transform: translateY(0);">
+                    Our Security Operations Center actively monitors for anomalies, providing real-time threat
+                    neutralization.
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h3 style="margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; font-size: 2rem;">Client Portal
+                FAQ</h3>
+
+            <div class="glass-card" style="text-align: left; margin-bottom: 1rem; padding: 1.5rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--primary-1);">How do I reset my credentials?</h4>
+                <p style="color: var(--text-muted);">For security reasons, password resets must be initiated via the
+                    'Forgot Password' link above, followed by email verification.</p>
+            </div>
+
+            <div class="glass-card" style="text-align: left; margin-bottom: 1rem; padding: 1.5rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--primary-1);">Can I grant access to my team?</h4>
+                <p style="color: var(--text-muted);">Yes. Primary account holders can manage role-based access controls
+                    for their internal legal teams within the settings menu.</p>
+            </div>
+
+            <div class="glass-card" style="text-align: left; padding: 1.5rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--primary-1);">Is my data backed up?</h4>
+                <p style="color: var(--text-muted);">We maintain redundant, geographically distributed backups to ensure
+                    data integrity and availability at all times.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 10rem;"></div>
+    </div>
+    </section>
+
+    <!-- Footer (Professional) -->
+    <footer class="footer-premium" style="padding: 6rem 5% 2rem; background: #0b0b0b;">
+        <div class="container"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem;">
+
+            <!-- Column 1: Brand Info -->
+            <div style="max-width: 300px;">
+                <a href="index.html" class="nav-logo"
+                    style="font-size: 1.5rem; margin-bottom: 1.5rem; display: block;">LexCounsel<span
+                        class="gold-text">.</span></a>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.9rem; margin-bottom: 2rem;">
+                    Providing sophisticated legal counsel for the world's most innovative companies. Global reach,
+                    unyielding dedication.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Firm</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                            style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                            style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                            style="color: var(--text-muted); text-decoration: none;">Practice Areas</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                            style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+                    <li style="margin-bottom: 0.8rem;"><a href="#"
+                            style="color: var(--text-muted); text-decoration: none;">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Contact</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                        <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">Headquarters</strong>
+                        100 Legal Ave, Suite 500<br>New York, NY 10001
+                    </li>
+                    <li style="margin-bottom: 1rem; color: var(--text-muted);">
+                        <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">Inquiries</strong>
+                        +1 (212) 555-0199<br>hello@lexcounsel.com
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter & Social -->
+            <div>
+                <h4
+                    style="color: #fff; margin-bottom: 1.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Stay Informed</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Subscribe to our legal
+                    briefing.</p>
+                <form style="display: flex; gap: 0.5rem; margin-bottom: 2rem;">
+                    <input type="email" placeholder="Email Address"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); padding: 0.8rem; color: #fff; width: 100%;">
+                    <button type="submit"
+                        style="background: var(--primary-1); border: none; color: #fff; padding: 0 1rem; cursor: pointer;">&rarr;</button>
+                </form>
+
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="LinkedIn">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="Twitter">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="#" style="color: #fff; text-decoration: none; opacity: 0.7;" aria-label="Instagram">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+            <div>&copy; 2026 LexCounsel. All rights reserved.</div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none;">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <style>
+        .auth-tab-btn.active {
+            color: var(--primary-1) !important;
+            border-bottom-color: var(--primary-1) !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+        }
+
+        .light-theme .auth-tab-btn.active {
+            background: rgba(0, 0, 0, 0.03) !important;
+        }
+
+        .nav-icon-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .nav-icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .nav-icon-btn:hover {
+            color: var(--primary-1);
+        }
+
+        @media (max-width: 900px) {
+            .container>div {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</body>
+
+</html>
