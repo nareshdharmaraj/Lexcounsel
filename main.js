@@ -116,7 +116,11 @@ const initScrollAnimations = () => {
     // Stats Counter Animation
     const stats = document.querySelectorAll('.stat-num');
     const startCount = (el) => {
-        const target = parseInt(el.getAttribute('data-target'));
+        const targetAttr = el.getAttribute('data-target');
+        if (!targetAttr) return;
+        const target = parseInt(targetAttr);
+        if (isNaN(target)) return;
+
         const duration = 2000;
         const step = target / (duration / 16);
         let current = 0;
@@ -124,7 +128,7 @@ const initScrollAnimations = () => {
         const timer = setInterval(() => {
             current += step;
             if (current >= target) {
-                el.innerText = target; // Formatting?
+                el.innerText = target; 
                 if (target > 1000) el.innerText = (target / 1000).toFixed(1) + 'k';
                 clearInterval(timer);
             } else {

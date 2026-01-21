@@ -297,31 +297,39 @@
                 width: 100%;
             }
 
+            .nav-actions {
+                order: 4;
+            }
+
+            /* Pie Chart Responsiveness */
             .chart-label-float {
                 position: relative !important;
-                top: auto !important;
-                right: auto !important;
-                bottom: auto !important;
-                left: auto !important;
+                inset: auto !important;
                 transform: none !important;
-                margin: 1rem 0;
-                width: 100%;
+                margin: 0.5rem 0 !important;
+                width: 100% !important;
+                display: block !important;
+            }
+
+            /* Target the specific pie container and its surrounding card */
+            .dashboard-section .glass-card>div[style*="perspective"] {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: auto !important;
+                gap: 1rem;
+                padding: 1rem 0 !important;
             }
 
             .pie-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
                 height: auto !important;
-            }
-
-            .mobile-toggle {
-                order: 3;
-                margin: 0 !important;
-            }
-
-            .nav-actions {
-                order: 4;
+                gap: 1rem;
             }
 
             /* Overlay when sidebar is open */
@@ -333,17 +341,15 @@
                 gap: 1.5rem !important;
             }
 
-            .pie-container {
-                width: 100% !important;
-                max-width: 300px;
-                height: auto !important;
-                aspect-ratio: 1/1;
-                margin: 0 auto;
-            }
-
             .pie-3d {
-                width: 70% !important;
-                height: 70% !important;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: rotateX(0deg) !important;
+                width: 180px !important;
+                height: 180px !important;
+                margin: 1rem auto !important;
+                order: -1;
             }
 
             footer .container {
@@ -370,12 +376,19 @@
             .dashboard-section .glass-card {
                 overflow-x: auto !important;
                 -webkit-overflow-scrolling: touch;
-                padding: 1.5rem !important;
+                padding: 1.25rem !important;
+                max-width: 100vw;
             }
 
             .dashboard-section table {
-                min-width: 600px;
-                /* Force scroll for tables */
+                min-width: 450px;
+                width: 100%;
+            }
+
+            .dashboard-section table th,
+            .dashboard-section table td {
+                white-space: nowrap;
+                padding: 1rem 0.75rem !important;
             }
 
             h1 {
@@ -413,7 +426,7 @@
                 </div>
             </div>
             <a href="about.html" class="mobile-nav-link">About Us</a>
-            <a href="services.html" class="mobile-nav-link">Practice Areas</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
             <a href="contact.html" class="mobile-nav-link">Contact</a>
             <div class="mobile-dropdown">
                 <a href="#" class="mobile-nav-link mobile-dropdown-header">Dashboards <svg viewBox="0 0 24 24">
@@ -996,7 +1009,7 @@
                     <li style="margin-bottom: 0.8rem;"><a href="about.html"
                             style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
                     <li style="margin-bottom: 0.8rem;"><a href="services.html"
-                            style="color: var(--text-muted); text-decoration: none;">Practice Areas</a></li>
+                            style="color: var(--text-muted); text-decoration: none;">Services</a></li>
                     <li style="margin-bottom: 0.8rem;"><a href="contact.html"
                             style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
                     <li style="margin-bottom: 0.8rem;"><a href="#"
