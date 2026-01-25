@@ -50,6 +50,21 @@
                 </div>
             </div>
             <a href="login.html" class="mobile-nav-link">Sign In</a>
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+                <button class="nav-icon-btn" id="rtlToggleMobile" aria-label="Language">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                </button>
+                <button class="nav-icon-btn" id="themeToggleMobile" aria-label="Toggle Theme">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <!-- Center Links -->
@@ -150,9 +165,9 @@
 
     <section class="section-premium">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem;">
+            <div class="res-grid-3">
                 <!-- Info Side -->
-                <div>
+                <div style="grid-column: span 1;">
                     <div class="glass-card" style="margin-bottom: 2rem; border-left: 3px solid var(--primary-1);">
                         <h3 style="margin-bottom: 1rem;">Primary Headquarters</h3>
                         <p style="color: var(--text-muted); margin-bottom: 0.5rem;">100 Legal Ave, Suite 500</p>
@@ -173,9 +188,9 @@
                 </div>
 
                 <!-- Form Side -->
-                <div class="glass-card">
+                <div class="glass-card" style="grid-column: span 2;">
                     <form>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                        <div class="res-grid-2" style="margin-bottom: 2rem;">
                             <div>
                                 <label
                                     style="display: block; margin-bottom: 0.5rem; color: var(--text-muted);">Name</label>
@@ -210,11 +225,60 @@
         </div>
     </section>
 
+    <!-- Interactive Map Section -->
+    <section class="section-premium">
+        <div class="container">
+            <h2 class="display-text res-title">Find <span class="gold-text">Us.</span></h2>
+            <p class="section-desc" style="text-align: center; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Visit our headquarters in New York or connect with any of our global offices. We're strategically positioned to serve clients worldwide.
+            </p>
+            
+            <div class="map-container" style="position: relative; width: 100%; height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-glass); box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <!-- Google Maps Embed - New York HQ -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1737838000000!5m2!1sen!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="LexCounsel New York Office Location">
+                </iframe>
+                
+                <!-- Map Overlay Info Card -->
+                <div class="map-overlay-card glass-card" style="position: absolute; top: 20px; left: 20px; padding: 1.5rem; max-width: 300px; background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(20px); border: 1px solid var(--border-glass); z-index: 10;">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem; color: var(--primary-1);">New York HQ</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+                        100 Legal Ave, Suite 500<br>
+                        New York, NY 10001
+                    </p>
+                    <a href="https://maps.google.com/?q=New+York+NY" target="_blank" rel="noopener noreferrer" 
+                       style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-1); text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.5rem 1rem; border: 1px solid var(--primary-1); border-radius: 4px; transition: all 0.3s ease;"
+                       onmouseover="this.style.background='var(--primary-1)'; this.style.color='#000';"
+                       onmouseout="this.style.background='transparent'; this.style.color='var(--primary-1)';">
+                        Get Directions
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile-friendly Map Instructions -->
+            <div class="map-instructions" style="margin-top: 2rem; text-align: center;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    <span style="color: var(--primary-1); font-weight: 600;">Tip:</span> Use two fingers to navigate the map on mobile devices
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- New Section: Global Offices -->
     <section class="section-premium">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Global <span
-                    class="gold-text">Presence.</span></h2>
+            <h2 class="display-text res-title">Global <span class="gold-text">Presence.</span></h2>
 
             <div class="grid-asymmetric"
                 style="margin-top: 0; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
@@ -323,8 +387,8 @@
             </div>
 
             <!-- Global Stats Bar -->
-            <div
-                style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 4rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border-glass);">
+            <div class="res-grid-2"
+                style="margin-top: 4rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border-glass);">
                 <div style="text-align: center;">
                     <span style="display: block; font-size: 2rem; font-weight: 800; color: var(--primary-1);">12+</span>
                     <span
@@ -397,7 +461,7 @@
                 <h3
                     style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 3.5rem; text-align: center;">
                     Specialized <span class="gold-text">Market Desks.</span></h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+                <div class="res-grid-3">
                     <div class="glass-card"
                         style="padding: 2.5rem; background: rgba(197, 160, 89, 0.05); border-top: 1px solid var(--primary-1);">
                         <h4
@@ -457,8 +521,7 @@
                     style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 70%); pointer-events: none;">
                 </div>
 
-                <div
-                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1;">
+                <div class="res-grid-2" style="align-items: center; position: relative; z-index: 1;">
                     <div>
                         <h3 style="font-size: 2.5rem; margin-bottom: 2rem;">Cross-Border <span
                                 class="gold-text">Dominance.</span></h3>
@@ -494,7 +557,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="res-grid-2">
                         <div class="glass-card"
                             style="text-align: center; padding: 2.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--primary-1);">
                             <h5
@@ -546,7 +609,7 @@
                 <span class="gold-text">Process.</span>
             </h2>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
+            <div class="res-grid-3">
                 <div>
                     <div
                         style="width: 4rem; height: 4rem; background: var(--surface-glass); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; border: 1px solid var(--primary-1); color: var(--primary-1); font-weight: 700; font-size: 1.5rem;">
@@ -670,9 +733,9 @@
     <!-- New Section: Department Directory -->
     <section class="section-premium">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Global <span
+            <h2 class="display-text res-title" style="margin-bottom: 4rem;">Global <span
                     class="gold-text">Directory.</span></h2>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <div class="res-grid-3" style="margin-top: 0;">
                 <div class="glass-card" style="padding: 2.5rem; border-top: 1px solid var(--primary-1);">
                     <h3 style="margin-bottom: 1.5rem;">Media & Press</h3>
                     <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">For all journalistic

@@ -145,6 +145,30 @@
             margin: 0 auto;
         }
 
+        @media (max-width: 768px) {
+            .titan-title {
+                font-size: 2.8rem !important;
+            }
+
+            .titan-quote {
+                font-size: 1.8rem !important;
+            }
+
+            .titan-stats-bar {
+                flex-direction: column;
+                gap: 1.5rem;
+                position: relative;
+                padding: 3rem 5%;
+            }
+
+            .titan-hero {
+                height: auto;
+                min-height: 100vh;
+                padding-top: 120px;
+                padding-bottom: 2rem;
+            }
+        }
+
         .practice-item {
             border-bottom: 1px solid var(--border-glass);
             padding: 2rem 0;
@@ -276,18 +300,16 @@
                 </div>
             </div>
             <a href="login.html" class="mobile-nav-link">Sign In</a>
-            <!-- Mobile Actions (Moved from Navbar) -->
-            <div class="mobile-actions" style="margin-top: 2rem; display: flex; gap: 2rem; justify-content: center;">
-                <button class="nav-icon-btn" id="rtlToggleMobile" aria-label="Language"
-                    style="width: 50px; height: 50px; border: 1px solid rgba(255,255,255,0.2);">
-                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+                <button class="nav-icon-btn" id="rtlToggleMobile" aria-label="Language">
+                    <svg viewBox="0 0 24 24">
                         <path
                             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                     </svg>
                 </button>
-                <button class="nav-icon-btn" id="themeToggleMobile" aria-label="Toggle Theme"
-                    style="width: 50px; height: 50px; border: 1px solid rgba(255,255,255,0.2);">
-                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+                <button class="nav-icon-btn" id="themeToggleMobile" aria-label="Toggle Theme">
+                    <svg viewBox="0 0 24 24">
                         <path
                             d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
@@ -359,10 +381,9 @@
     <!-- Titan Hero -->
     <header class="titan-hero">
         <div class="titan-content">
-            <h1 class="titan-title">UNCOMPROMISING<br>EXCELLENCE<span style="color:var(--primary-1)">.</span></h1>
+            <h1 class="titan-title"> TRUSTABLE<br>EXCELLENCE<span style="color:var(--primary-1)">....</span></h1>
             <p class="titan-subtitle">
-                We do not just practice law; we define it. From multi-billion dollar mergers to high-stakes litigation,
-                LexCounsel stands as the guardian of your corporate legacy.
+
             </p>
             <a href="contact.html" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Secure
                 Counsel</a>
@@ -404,8 +425,7 @@
     <section class="section-premium">
         <div class="container">
             <div style="text-align: center; margin-bottom: 5rem;">
-                <h2 class="display-text" style="font-size: 3rem;">The LexCounsel <span
-                        class="gold-text">Advantage.</span>
+                <h2 class="display-text res-title">The LexCounsel <span class="gold-text">Advantage.</span>
                 </h2>
                 <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Beyond legal advice, we deliver
                     strategic dominance. Our integrated approach ensures your interests are protected from every angle.
@@ -413,7 +433,7 @@
             </div>
 
             <div class="grid-asymmetric">
-                <div class="grid-item" style="height: 350px; grid-column: span 4;">
+                <div class="grid-item">
                     <div class="grid-watermark">01.</div>
                     <span class="grid-icon">⚖️</span>
                     <h3 class="grid-title">Elite Advocacy</h3>
@@ -421,7 +441,7 @@
                         practice,
                         bringing unmatched courtroom experience.</p>
                 </div>
-                <div class="grid-item" style="height: 350px; grid-column: span 4;">
+                <div class="grid-item">
                     <div class="grid-watermark">02.</div>
                     <span class="grid-icon">🌐</span>
                     <h3 class="grid-title">Global Fluency</h3>
@@ -429,7 +449,7 @@
                         complexities
                         with local precision.</p>
                 </div>
-                <div class="grid-item" style="height: 350px; grid-column: span 4;">
+                <div class="grid-item">
                     <div class="grid-watermark">03.</div>
                     <span class="grid-icon">🛡️</span>
                     <h3 class="grid-title">Risk Immunization</h3>
@@ -443,9 +463,10 @@
     <!-- Client Testimonials -->
     <section class="titan-section" style="background: var(--surface-light);">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
                 <h3
-                    style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted);">
+                    style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin: 0;">
                     Client Voices</h3>
                 <div style="display: flex; gap: 1rem;">
                     <button class="nav-icon-btn" aria-label="Previous">&larr;</button>
@@ -514,16 +535,14 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Featured Insights -->
     <section class="titan-section">
         <div class="container">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 3rem;">Legal
-                Intelligence.</h2>
+            <h2 class="res-title">Legal Intelligence.</h2>
 
-            <div class="insights-grid">
+            <div class="res-grid-3" style="margin-top: 0;">
                 <div class="insight-card">
                     <span class="insight-tag">Regulatory</span>
                     <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Future of Antitrust</h3>
@@ -562,12 +581,13 @@
                 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 3rem; text-align: center; color: var(--text-muted);">
                 Strategic Alliances</h2>
 
-            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 4rem; opacity: 0.7;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-muted);">GLOBEX</div>
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-muted);">NEXUS FIN</div>
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-muted);">STRATOS</div>
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-muted);">FORTIS</div>
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-muted);">AETNA CAPITAL</div>
+            <div class="res-grid-3"
+                style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; opacity: 0.7;">
+                <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-muted);">GLOBEX</div>
+                <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-muted);">NEXUS FIN</div>
+                <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-muted);">STRATOS</div>
+                <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-muted);">FORTIS</div>
+                <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-muted);">AETNA CAPITAL</div>
             </div>
         </div>
     </section>
@@ -577,10 +597,9 @@
     <!-- New Section: Client Success Stories -->
     <section class="section-premium">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Client <span
-                    class="gold-text">Victories.</span></h2>
+            <h2 class="display-text res-title">Client <span class="gold-text">Victories.</span></h2>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="res-grid-3">
                 <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
                     <div style="font-size: 3rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">
                         $2.4B</div>
@@ -615,7 +634,7 @@
     <section class="section-premium" style="background: var(--bg-1);">
         <div class="container">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 class="display-text" style="font-size: 3rem; text-align: center; margin-bottom: 4rem;">A Legacy of
+                <h2 class="display-text res-title" style="text-align: center; margin-bottom: 4rem;">A Legacy of
                     <span class="gold-text">Excellence.</span>
                 </h2>
 

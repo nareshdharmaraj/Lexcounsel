@@ -53,6 +53,21 @@
                 </div>
             </div>
             <a href="login.html" class="mobile-nav-link">Sign In</a>
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+                <button class="nav-icon-btn" id="rtlToggleMobile" aria-label="Language">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                </button>
+                <button class="nav-icon-btn" id="themeToggleMobile" aria-label="Toggle Theme">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <!-- Center Links -->
@@ -126,7 +141,7 @@
         <div class="hero-glass-overlay"></div>
         <div class="container hero-container">
             <div class="page-hero-content">
-                <h1 class="display-text" style="font-size: 5rem;">Our <span class="gold-text">Expertise.</span></h1>
+                <h1 class="display-text res-title">Our <span class="gold-text">Expertise.</span></h1>
                 <p class="section-desc"
                     style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1.5rem; max-width: 600px;">
                     At LexCounsel, we provide sophisticated, partner-led legal solutions designed to navigate the
@@ -155,8 +170,7 @@
     <!-- Sector Focus (New Section) -->
     <section class="section-premium">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Sector <span
-                    class="gold-text">Focus.</span></h2>
+            <h2 class="display-text res-title">Sector <span class="gold-text">Focus.</span></h2>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <div class="glass-card" style="padding: 2.5rem; border-top: 3px solid var(--primary-1);">
@@ -196,10 +210,9 @@
     <!-- Success Stories (New Section) -->
     <section class="section-premium" style="background: var(--bg-1);">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Client <span
-                    class="gold-text">Success.</span></h2>
+            <h2 class="display-text res-title">Client <span class="gold-text">Success.</span></h2>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div class="res-grid-2" style="align-items: center;">
                 <div class="glass-card" style="padding: 3rem; text-align: left;" data-parallax="0.05">
                     <div style="font-size: 4rem; color: var(--primary-1); line-height: 1; margin-bottom: 2rem;">"</div>
                     <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-main); margin-bottom: 2rem;">
@@ -247,23 +260,20 @@
                     </div>
                     <div class="stat-num" style="font-size: 2.5rem; opacity: 0.3;">01</div>
                 </div>
-                <div class="grid-asymmetric" style="margin-top: 1rem; row-gap: 2rem;">
-                    <div class="grid-item"
-                        style="height: auto; padding: 2.5rem; grid-column: span 4; background: rgba(255,255,255,0.02);">
+                <div class="res-grid-3" style="margin-top: 1rem; row-gap: 2rem;">
+                    <div class="grid-item" style="height: auto; padding: 2.5rem; background: rgba(255,255,255,0.02);">
                         <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
                         <h3 style="margin-bottom: 1rem;">M&A Advisory</h3>
                         <p class="grid-desc" style="opacity: 1; transform: none;">Full-lifecycle support for asset
                             purchases, share swaps, and spin-offs.</p>
                     </div>
-                    <div class="grid-item"
-                        style="height: auto; padding: 2.5rem; grid-column: span 4; background: rgba(255,255,255,0.02);">
+                    <div class="grid-item" style="height: auto; padding: 2.5rem; background: rgba(255,255,255,0.02);">
                         <div style="font-size: 2rem; margin-bottom: 1rem;">📊</div>
                         <h3 style="margin-bottom: 1rem;">Capital Markets</h3>
                         <p class="grid-desc" style="opacity: 1; transform: none;">Advising on IPOs, private placements,
                             and debt restructuring.</p>
                     </div>
-                    <div class="grid-item"
-                        style="height: auto; padding: 2.5rem; grid-column: span 4; background: rgba(255,255,255,0.02);">
+                    <div class="grid-item" style="height: auto; padding: 2.5rem; background: rgba(255,255,255,0.02);">
                         <div style="font-size: 2rem; margin-bottom: 1rem;">🛡️</div>
                         <h3 style="margin-bottom: 1rem;">Governance</h3>
                         <p class="grid-desc" style="opacity: 1; transform: none;">Board advisory, fiduciary duties, and
@@ -273,7 +283,7 @@
             </div>
 
             <!-- All Practice Areas Expanded -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <div class="res-grid-3">
                 <div class="glass-card" style="padding: 2.5rem;">
                     <h3 class="gold-text"
                         style="font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
@@ -325,10 +335,10 @@
     <!-- Specialized Tiers (New Section) -->
     <section class="section-premium" style="background: var(--bg-1);">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3.5rem; text-align: center; margin-bottom: 5rem;">Engagement
+            <h2 class="display-text res-title" style="text-align: center;">Engagement
                 <span class="gold-text">Models.</span>
             </h2>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+            <div class="res-grid-3" style="gap: 2.5rem;">
                 <div class="glass-card" style="padding: 3rem; text-align: center;">
                     <h4
                         style="text-transform: uppercase; letter-spacing: 2px; color: var(--primary-1); margin-bottom: 1rem;">
@@ -371,8 +381,7 @@
     <!-- Strategic Approach (New Content) -->
     <section class="section-premium" style="background: var(--bg-1);">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Our <span
-                    class="gold-text">Methodology.</span></h2>
+            <h2 class="display-text res-title">Our <span class="gold-text">Methodology.</span></h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
                 <div class="glass-card" style="padding: 2rem;">
                     <span
@@ -402,7 +411,7 @@
     <!-- The Client Experience (New Section) -->
     <section class="section-premium">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; text-align: center; margin-bottom: 4rem;">The Client <span
+            <h2 class="display-text res-title" style="text-align: center;">The Client <span
                     class="gold-text">Experience.</span></h2>
 
             <div style="background: var(--surface-light); padding: 4rem; border: 1px solid var(--border-glass);">
@@ -433,13 +442,12 @@
     <!-- New Section: Industry Verticals -->
     <section class="section-premium">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Industries <span
-                    class="gold-text">Served.</span></h2>
+            <h2 class="display-text res-title">Industries <span class="gold-text">Served.</span></h2>
 
-            <div class="grid-asymmetric" style="margin-top: 0; gap: 2rem;">
+            <div class="res-grid-4" style="margin-top: 0;">
                 <!-- Banking -->
                 <div class="glass-card"
-                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; min-height: 480px;">
                     <div
                         style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
                         🏦</div>
@@ -452,7 +460,7 @@
                 </div>
                 <!-- Healthcare -->
                 <div class="glass-card"
-                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; min-height: 480px;">
                     <div
                         style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
                         ⚕️</div>
@@ -465,7 +473,7 @@
                 </div>
                 <!-- Tech -->
                 <div class="glass-card"
-                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; min-height: 480px;">
                     <div
                         style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
                         💻</div>
@@ -478,7 +486,7 @@
                 </div>
                 <!-- Energy -->
                 <div class="glass-card"
-                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; grid-column: span 3; min-height: 480px;">
+                    style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; min-height: 480px;">
                     <div
                         style="font-size: 2.5rem; width: 60px; height: 60px; background: var(--surface-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
                         ⚡</div>

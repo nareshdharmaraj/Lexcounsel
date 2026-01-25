@@ -51,6 +51,21 @@
                 </div>
             </div>
             <a href="login.html" class="mobile-nav-link">Sign In</a>
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+                <button class="nav-icon-btn" id="rtlToggleMobile" aria-label="Language">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                </button>
+                <button class="nav-icon-btn" id="themeToggleMobile" aria-label="Toggle Theme">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <!-- Center Links -->
@@ -125,7 +140,7 @@
         <div class="container hero-container">
             <div class="page-hero-content">
                 <p class="hero-subtitle">Our Firm</p>
-                <h1 class="display-text">Our <br><span class="gold-text">Legacy.</span></h1>
+                <h1 class="display-text res-title">Our <br><span class="gold-text">Legacy.</span></h1>
                 <p class="section-desc"
                     style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-top: 1.5rem; max-width: 600px;">
                     Founded in 2001, LexCounsel was built on the principle that elite legal advocacy should be as
@@ -154,10 +169,9 @@
     <!-- Firm Leadership (Parallax) -->
     <section class="section-premium" style="background: var(--bg-1);">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Firm <span
-                    class="gold-text">Leadership.</span></h2>
+            <h2 class="display-text res-title">Firm <span class="gold-text">Leadership.</span></h2>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div class="res-grid-3">
                 <!-- Leader 1 -->
                 <div class="glass-card" style="padding: 0; overflow: hidden;" data-parallax="0.1">
                     <div style="height: 300px; overflow: hidden;">
@@ -209,12 +223,12 @@
     <section class="section-premium" style="background: linear-gradient(to bottom, var(--bg-1), #0a0f1d);">
         <div class="container">
             <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem auto;">
-                <h2 class="display-text" style="font-size: 3rem;">Our Core <span class="gold-text">Values.</span></h2>
+                <h2 class="display-text res-title">Our Core <span class="gold-text">Values.</span></h2>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">These principles are the bedrock of our firm,
                     guiding every decision we make and every case we take.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <div class="res-grid-3">
                 <div class="glass-card"
                     style="padding: 3rem; text-align: center; border-bottom: 2px solid var(--primary-1);">
                     <div style="font-size: 3rem; margin-bottom: 1.5rem;">⚖️</div>
@@ -243,8 +257,7 @@
     <!-- Evolution (New Horizontal Slider Section) -->
     <section class="section-premium" style="overflow: hidden;">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Our <span
-                    class="gold-text">Evolution.</span></h2>
+            <h2 class="display-text res-title">Our <span class="gold-text">Evolution.</span></h2>
 
             <div
                 style="display: flex; gap: 4rem; overflow-x: auto; padding-bottom: 2rem; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none;">
@@ -315,7 +328,7 @@
     <!-- Content Split -->
     <section class="section-premium">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div class="res-grid-2" style="align-items: center;">
                 <div class="glass-card" style="height: 500px; padding: 0; overflow: hidden;">
                     <img src="assets/firm-heritage.png" alt="LexCounsel Office"
                         style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
@@ -330,7 +343,7 @@
                         Our philosophy is simple: We don't just interpret the law; we shape it to serve our clients'
                         objectives.
                     </p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="res-grid-2">
                         <div>
                             <div class="stat-num" style="font-size: 3rem;" data-target="200">0</div>
                             <div class="stat-label">Attorneys</div>
@@ -367,9 +380,8 @@
     <!-- Advisory Board (New Section) -->
     <section class="section-premium">
         <div class="container">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">Advisory <span
-                    class="gold-text">Council.</span></h2>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+            <h2 class="display-text res-title">Advisory <span class="gold-text">Council.</span></h2>
+            <div class="res-grid-4">
                 <div class="glass-card" style="padding: 2rem; text-align: center;">
                     <div
                         style="width: 80px; height: 80px; margin: 0 auto 1.5rem auto; border-radius: 50%; overflow: hidden; border: 1px solid var(--primary-1);">

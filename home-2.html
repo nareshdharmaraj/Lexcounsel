@@ -231,11 +231,30 @@
         @media (max-width: 768px) {
             .stats-overlay {
                 grid-template-columns: 1fr 1fr;
+                /* Keep 2x2 but fix squashing */
+                gap: 1rem;
                 margin-top: 2rem;
+                position: relative;
+                top: 0;
+                transform: none;
+                padding: 0 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .stat-value {
+                font-size: 2.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+                letter-spacing: 2px;
             }
 
             .earth-grid {
-                height: 300px;
+                height: 350px;
             }
         }
 
@@ -386,6 +405,21 @@
                 </div>
             </div>
             <a href="login.html" class="mobile-nav-link">Sign In</a>
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+                <button class="nav-icon-btn" id="rtlToggleMobile" aria-label="Language">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                </button>
+                <button class="nav-icon-btn" id="themeToggleMobile" aria-label="Toggle Theme">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <!-- Center Links -->
@@ -474,10 +508,10 @@
     <!-- Why Choose Us (New Section) -->
     <section class="section-premium">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div class="res-grid-2" style="align-items: center;">
                 <div>
-                    <h2 class="display-text" style="font-size: 3rem; margin-bottom: 2rem;">Why Leading <br><span
-                            class="gold-text">Companies Trust Us.</span></h2>
+                    <h2 class="display-text res-title">Why Leading <br><span class="gold-text">Companies Trust
+                            Us.</span></h2>
                     <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
                         In a world of complex regulations and high-stakes litigation, you need more than just legal
                         advice. You need a strategic partner who understands your business objectives.
@@ -498,7 +532,7 @@
                     </ul>
                     <a href="about.html" class="btn-magnetic">Our Firm Profile</a>
                 </div>
-                <div class="glass-card"
+                <div class="glass-card mobile-hide-visual"
                     style="height: 400px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, var(--surface-glass), transparent); overflow: hidden;">
                     <!-- Abstract Trust Visual -->
                     <img src="assets/trust-visual.png" alt="Legal Excellence"
@@ -511,8 +545,7 @@
     <!-- Our Process (New Section) -->
     <section class="section-premium" style="background: var(--bg-1);">
         <div class="container" style="text-align: center;">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 4rem;">The <span
-                    class="gold-text">LexCounsel Approach.</span></h2>
+            <h2 class="display-text res-title">The <span class="gold-text">LexCounsel Approach.</span></h2>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
                 <!-- Step 1 -->
@@ -599,8 +632,8 @@
     <section class="section-premium">
         <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
-                <h2 class="display-text" style="font-size: 3rem; margin: 0;">Legal <span
-                        class="gold-text">Insights.</span></h2>
+                <h2 class="display-text res-title" style="margin: 0;">Legal <span class="gold-text">Insights.</span>
+                </h2>
                 <a href="#" class="btn-magnetic">View All Articles</a>
             </div>
 
@@ -665,8 +698,7 @@
     <!-- Global Reach (Creative REDESIGN) -->
     <section class="section-premium" style="background: var(--bg-1); padding-bottom: 6rem; overflow: hidden;">
         <div class="container" style="text-align: center; position: relative; z-index: 10;">
-            <h2 class="display-text" style="font-size: 3rem; margin-bottom: 2rem;">Global <span
-                    class="gold-text">Reach.</span></h2>
+            <h2 class="display-text res-title">Global <span class="gold-text">Reach.</span></h2>
             <p
                 style="color: var(--text-muted); margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                 With strategic alliances in over 40 countries, we provide seamless legal support wherever your business
@@ -676,7 +708,8 @@
             <!-- Creative 3D Map Container -->
             <div class="globe-container">
                 <div class="earth-grid">
-                    <img src="assets/world_map_dark.png" alt="Global Network" class="world-map-texture">
+                    <img src="assets/world_map_dark.png" alt="Global Network" class="world-map-texture"
+                        style="width: 100%; height: 100%; object-fit: contain; opacity: 0.5;">
 
                     <!-- Pulsing Cities -->
                     <div class="city-marker" style="top: 32%; left: 25%; animation-delay: 0s;" data-label="New York">
@@ -724,16 +757,16 @@
 
     <!-- Newsletter (New Section) -->
     <section class="section-premium">
-        <div class="container" style="max-width: 600px;">
-            <div class="glass-card" style="padding: 4rem; text-align: center;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Stay Ahead of the Curve</h2>
+        <div class="container">
+            <div class="glass-card" style="padding: 4rem 2rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 class="res-title">Stay Ahead of the Curve</h2>
                 <p style="color: var(--text-muted); margin-bottom: 2rem;">Join 15,000+ executives receiving our weekly
                     legal intelligence briefing.</p>
 
-                <form style="display: flex; gap: 1rem;">
+                <form style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <input type="email" placeholder="professional@company.com"
-                        style="flex: 1; padding: 1rem; background: var(--bg-1); border: 1px solid var(--border-glass); color: #fff; border-radius: 4px;">
-                    <button type="submit" class="btn-magnetic">Subscribe</button>
+                        style="flex: 1; min-width: 250px; padding: 1rem; background: var(--bg-1); border: 1px solid var(--border-glass); color: #fff; border-radius: 4px;">
+                    <button type="submit" class="btn-magnetic" style="width: 100%;">Subscribe</button>
                 </form>
             </div>
         </div>
@@ -785,7 +818,7 @@
                 <h3 class="grid-title">Complex Litigation</h3>
                 <p class="grid-desc">Unyielding advocacy in federal and cross-border disputes where the stakes define
                     the future.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="res-grid-2">
                     <ul class="grid-sub-list">
                         <li>Class Action Defense</li>
                         <li>Commercial Arbitration</li>
